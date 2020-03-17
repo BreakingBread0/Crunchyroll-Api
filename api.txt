@@ -1,0 +1,53 @@
+ENDPOINT: https://api.crunchyroll.com/
+
+/info.0.json POST
+PURPOSE: Lists media info, with links
+media_id: Media ID
+fields: "media.class,media.media_id,media.etp_guid,media.collection_id,media.series_id,media.series_etp_guid,media.media_type,media.episode_number,media.name,media.collection_name,media.series_name,media.description,media.hardsub_lang,media.audio_lang,media.playhead,media.duration,media.screenshot_image,media.bif_url,media.url,media.stream_data,media.clip_stream_data,media.ad_spots,media.clip,media.sample,media.premium_only,media.available,media.premium_available,media.free_available,media.available_time,media.unavailable_time,media.premium_available_time,media.premium_unavailable_time,media.free_available_time,media.free_unavailable_time,media.availability_notes,media.created,media.mature"
+session_id: (Session)
+locale: (Locale)
+version: "1.3.1.0"
+connectivity_type: "ethernet"
+
+/list_media.0.json POST
+PURPOSE: List media with collection ID
+collection_id: Collection ID
+sort: "asc" or "desc"
+offset: "0"
+limit: "50000"
+include_clips: "false"
+fields: "media.media_id,media.name,media.series_id,media.series_name,media.description,media.premium_only,media.screenshot_image,media.available_time,media.premium_available_time,media.premium_available,media.episode_number,media.duration,media.playhead"
+session_id: Session ID
+locale: (Locale)
+version: "1.3.1.0"
+connectivity_type: "ethernet"
+
+/search.0.json POST
+PURPOSE: Searches for things
+q: Search Terms
+media_types: anime|drama|taiseng
+classes: "series"
+offset: "0"
+limit: "100"
+fields: "series.series_id,series.etp_guid,series.name,series.description,series.portrait_image,series.in_queue,series.premium_only,series.media_count,series.collection_count"
+session_id: Session
+locale: (locales)
+version: "1.3.1.0"
+connectivity_type: "ethernet"
+
+/list_collections.0.json POST
+PURPOSE: Gets Collections
+series_id: Serien ID
+offset: "0"
+limit: "50000"
+session_id: Session
+version: "1.3.1.0"
+connectivity_type: "ethernet"
+
+/info.0.json POST
+PURPOSE: Gets series information
+series_id: Series ID
+session_id: Session ID
+locale: (Locale)
+version: "1.3.1.0"
+connectivity_type: ethernet
